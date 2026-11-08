@@ -1,0 +1,52 @@
+backend:
+  name: github
+  repo: 25sportid/25sportkatalog
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://25sport.netlify.app
+display_url: https://25sport.netlify.app
+
+collections:
+  - name: catalog
+    label: Katalog Jersey
+    files:
+      - name: products
+        label: Daftar Produk
+        file: data/products.json
+        format: json
+        fields:
+          - label: Produk
+            name: products
+            widget: list
+            summary: "{{fields.name}} — Rp {{fields.price}}"
+            fields:
+              - label: Nama produk
+                name: name
+                widget: string
+              - label: Kategori
+                name: category
+                widget: select
+                options:
+                  - Football
+                  - Futsal
+                  - Esports
+                  - Custom
+              - label: Harga (Rupiah, angka saja)
+                name: price
+                widget: number
+                value_type: int
+                min: 0
+              - label: Deskripsi
+                name: desc
+                widget: text
+              - label: Label kecil
+                name: badge
+                widget: string
+                required: false
+              - label: Foto jersey
+                name: image
+                widget: image
+                required: false

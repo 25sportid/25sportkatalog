@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "name": "Classic Home Jersey",
+      "category": "Football",
+      "price": 185000,
+      "desc": "Jersey ringan untuk matchday.",
+      "badge": "BEST SELLER",
+      "image": ""
+    },
+    {
+      "name": "Urban Futsal Jersey",
+      "category": "Futsal",
+      "price": 150000,
+      "desc": "Desain sporty untuk permainan cepat.",
+      "badge": "FAVORIT",
+      "image": ""
+    },
+    {
+      "name": "Pro Esports Jersey",
+      "category": "Esports",
+      "price": 210000,
+      "desc": "Tampilan kompetitif dan modern.",
+      "badge": "NEW",
+      "image": ""
+    },
+    {
+      "name": "Custom Team Jersey",
+      "category": "Custom",
+      "price": 230000,
+      "desc": "Request nama dan nomor tim.",
+      "badge": "CUSTOM",
+      "image": ""
+    },
+    {
+      "name": "Retro Football Jersey",
+      "category": "Football",
+      "price": 195000,
+      "desc": "Sentuhan klasik untuk koleksi.",
+      "badge": "LIMITED",
+      "image": ""
+    },
+    {
+      "name": "Training Jersey",
+      "category": "Futsal",
+      "price": 135000,
+      "desc": "Nyaman untuk latihan rutin.",
+      "badge": "TRAINING",
+      "image": ""
+    }
+  ]
+}
