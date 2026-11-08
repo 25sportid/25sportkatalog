@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101311"><title>KICKOFF | Jersey Store</title>
+<style>
+:root{--bg:#f5f6f2;--ink:#171a17;--muted:#737a72;--lime:#c9f36a;--dark:#101311;--card:#fff;--line:#e5e8e0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Arial,sans-serif;padding-bottom:78px}
+a{color:inherit;text-decoration:none}button,input{font:inherit}
+.topbar{height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 17px;background:var(--dark);color:white;position:sticky;top:0;z-index:10}
+.brand{font-weight:950;letter-spacing:1.7px;font-size:20px}.brand span{color:var(--lime)}.top-action{border:1px solid #3b423b;border-radius:25px;padding:8px 12px;font-size:13px;color:white}
+.hero{margin:14px 14px 22px;border-radius:18px;overflow:hidden;background:var(--dark);color:white;position:relative;min-height:300px;padding:24px 20px;display:flex;align-items:center}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#101311 5%,#101311d9 50%,#10131130);pointer-events:none}
+.hero-img{position:absolute;right:-25px;top:0;height:100%;width:72%;object-fit:cover;opacity:.78}
+.hero-content{position:relative;z-index:1;max-width:78%}.eyebrow{font-size:10px;letter-spacing:2.2px;color:#b8e65b;font-weight:800}.hero h1{font-size:clamp(35px,10vw,52px);line-height:.98;letter-spacing:-2px;margin:13px 0}.hero h1 span{color:var(--lime)}.hero p{font-size:13px;color:#d0d4ce;line-height:1.55;margin:0 0 18px}.hero-cta{display:inline-block;background:var(--lime);color:#111;font-weight:850;padding:11px 15px;border-radius:7px;font-size:12px}
+main{padding:0 14px}.section-top{display:flex;align-items:end;justify-content:space-between;margin:0 0 14px}.section-top h2{margin:5px 0 0;font-size:24px;letter-spacing:-.8px}.section-top small{color:var(--muted);font-size:11px}.search-wrap{margin-bottom:13px}.search{width:100%;border:1px solid var(--line);background:white;border-radius:10px;padding:13px 14px;outline:none}.search:focus{border-color:#8ba84d}
+.categories{display:flex;gap:8px;overflow-x:auto;padding:0 0 14px;scrollbar-width:none}.categories::-webkit-scrollbar{display:none}.chip{white-space:nowrap;border:1px solid var(--line);background:white;color:#4d554c;border-radius:30px;padding:9px 14px;font-size:12px;font-weight:700;cursor:pointer}.chip.active{background:var(--dark);color:var(--lime);border-color:var(--dark)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.product{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:0}.photo{aspect-ratio: .82;background:#e8ebe4;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover}.photo-fallback{font-size:56px;opacity:.65}.tag{position:absolute;left:8px;top:8px;background:#fff;border-radius:5px;padding:5px 7px;font-size:9px;font-weight:850;letter-spacing:.5px}.info{padding:11px 10px 12px}.category{font-size:9px;letter-spacing:1px;color:#6e8a32;font-weight:900}.info h3{font-size:13px;line-height:1.35;margin:5px 0 7px;min-height:34px}.price{font-size:13px;font-weight:900}.meta{font-size:10px;color:var(--muted);margin-top:5px}.choose{width:100%;border:0;border-radius:7px;background:var(--dark);color:white;font-weight:800;font-size:11px;padding:10px;margin-top:10px;cursor:pointer}.choose:active{transform:scale(.98)}
+.notice{margin:22px 0;background:#e9efdd;border-radius:12px;padding:15px;font-size:12px;line-height:1.6;color:#3e4c2c}.notice strong{display:block;font-size:14px;margin-bottom:3px}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:9px 5px calc(9px + env(safe-area-inset-bottom));z-index:20}.nav-item{display:flex;flex-direction:column;align-items:center;gap:3px;color:#858b82;font-size:10px;min-width:56px}.nav-item b{font-size:19px;font-weight:500}.nav-item.active{color:#20251c}.nav-item.active b{color:#6d8b2b}
+footer{text-align:center;padding:25px 15px;color:var(--muted);font-size:11px}
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:30;align-items:end;justify-content:center}.modal.show{display:flex}.sheet{background:white;width:100%;max-width:500px;border-radius:20px 20px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom));max-height:85vh;overflow:auto}.sheet-head{display:flex;justify-content:space-between;align-items:center}.sheet h2{font-size:20px;margin:4px 0}.close{border:0;background:#f0f1ed;border-radius:50%;width:35px;height:35px;font-size:20px}.sheet p{font-size:13px;color:var(--muted);line-height:1.6}.field{margin:12px 0}.field label{display:block;font-size:12px;font-weight:800;margin-bottom:7px}.field select,.field input{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;background:white}.order-btn{display:block;text-align:center;background:#25d366;color:#102416;font-weight:900;padding:14px;border-radius:9px;margin-top:15px}
+@media(min-width:700px){body{padding-bottom:0}.topbar{padding:0 max(5%,calc((100% - 1100px)/2))}.hero{max-width:1100px;margin:24px auto;min-height:350px;padding:40px}.hero-content{max-width:55%}.hero h1{font-size:65px}.hero-img{width:55%}main{max-width:1100px;margin:auto;padding:0 24px}.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.photo{aspect-ratio:1}.info{padding:15px}.info h3{font-size:16px}.price{font-size:15px}.bottom-nav{display:none}.hero p{font-size:15px}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#home">KICK<span>OFF</span></a><a class="top-action" href="#catalog">Lihat Jersey ↗</a></header>
+<section class="hero" id="home">
+<img class="hero-img" src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=80" alt="Lapangan sepak bola">
+<div class="hero-content"><div class="eyebrow">GEAR UP • PLAY YOUR GAME</div><h1>YOUR GAME.<br><span>YOUR STYLE.</span></h1><p>Koleksi jersey pilihan untuk matchday, latihan, dan gaya harian.</p><a class="hero-cta" href="#catalog">JELAJAHI KATALOG</a></div>
+</section>
+<main id="catalog">
+<div class="section-top"><div><div class="eyebrow">PILIH FAVORITMU</div><h2>Katalog Jersey</h2></div><small id="countLabel">6 produk</small></div>
+<div class="search-wrap"><input class="search" id="search" placeholder="⌕  Cari jersey..." aria-label="Cari jersey"></div>
+<div class="categories" id="categories"><button class="chip active" data-cat="Semua">Semua</button><button class="chip" data-cat="Football">Football</button><button class="chip" data-cat="Futsal">Futsal</button><button class="chip" data-cat="Esports">Esports</button><button class="chip" data-cat="Custom">Custom</button></div>
+<div class="grid" id="products"></div>
+<div class="notice"><strong>Jersey custom? Bisa banget!</strong>Ingin desain sendiri, nama, atau nomor punggung? Hubungi kami lewat WhatsApp untuk konsultasi pesanan.</div>
+</main>
+<footer>© 2026 KICKOFF Jersey Store · Sport your identity.</footer>
+<nav class="bottom-nav"><a class="nav-item active" href="#home"><b>⌂</b>Beranda</a><a class="nav-item" href="#catalog"><b>▦</b>Katalog</a><a class="nav-item" href="#" onclick="openCart();return false"><b>🛒</b>Keranjang <span id="navCart">0</span></a><a class="nav-item" href="#contact" onclick="alert('Silakan hubungi toko melalui WhatsApp untuk informasi.');return false"><b>☏</b>Kontak</a></nav>
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="sheet"><div class="sheet-head"><div><div class="eyebrow">DETAIL PRODUK</div><h2 id="modalName">Nama jersey</h2></div><button class="close" onclick="closeModal()">×</button></div><p id="modalDesc"></p><div class="field"><label for="size">Pilih ukuran</label><select id="size"><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select></div><div class="field"><label for="qty">Jumlah</label><input id="qty" type="number" min="1" value="1"></div><a class="order-btn" id="orderLink" href="#" target="_blank">Pesan via WhatsApp</a></div></div>
+<script>
+const products=[
+{name:"Classic Home Jersey",category:"Football",price:185000,desc:"Jersey ringan untuk matchday.",badge:"BEST SELLER"},
+{name:"Urban Futsal Jersey",category:"Futsal",price:150000,desc:"Desain sporty untuk permainan cepat.",badge:"FAVORIT"},
+{name:"Pro Esports Jersey",category:"Esports",price:210000,desc:"Tampilan kompetitif dan modern.",badge:"NEW"},
+{name:"Custom Team Jersey",category:"Custom",price:230000,desc:"Request nama dan nomor tim.",badge:"CUSTOM"},
+{name:"Retro Football Jersey",category:"Football",price:195000,desc:"Sentuhan klasik untuk koleksi.",badge:"LIMITED"},
+{name:"Training Jersey",category:"Futsal",price:135000,desc:"Nyaman untuk latihan rutin.",badge:"TRAINING"}
+];
+let activeCategory="Semua",cartCount=0,selected=null;
+const money=n=>new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(n);
+function render(){let term=document.getElementById("search").value.toLowerCase();let filtered=products.filter(p=>(activeCategory==="Semua"||p.category===activeCategory)&&p.name.toLowerCase().includes(term));document.getElementById("countLabel").textContent=filtered.length+" produk";
+document.getElementById("products").innerHTML=filtered.map(p=>`<article class="product"><div class="photo"><div class="photo-fallback">👕</div><span class="tag">${p.badge}</span></div><div class="info"><div class="category">${p.category.toUpperCase()}</div><h3>${p.name}</h3><div class="price">${money(p.price)}</div><div class="meta">Tersedia ukuran S–XXL</div><button class="choose" onclick="showProduct('${p.name}')">Lihat & Pesan</button></div></article>`).join("")||'<p style="grid-column:1/-1;color:#737a72">Produk tidak ditemukan. Coba kata kunci lain.</p>'}
+function showProduct(name){selected=products.find(p=>p.name===name);document.getElementById("modalName").textContent=selected.name;document.getElementById("modalDesc").textContent=selected.desc+" Harga "+money(selected.price)+". Pilih ukuran dan jumlah, lalu lanjutkan pemesanan via WhatsApp.";document.getElementById("modal").classList.add("show");updateOrderLink()}
+function updateOrderLink(){if(!selected)return;let size=document.getElementById("size").value,qty=Math.max(1,Number(document.getElementById("qty").value)||1);let phone="6281234567890";let msg=`Halo KICKOFF, saya ingin pesan ${selected.name}. Ukuran: ${size}. Jumlah: ${qty}. Harga satuan: ${money(selected.price)}. Mohon info selanjutnya.`;document.getElementById("orderLink").href=`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+function openCart(){alert("Keranjang sederhana: kamu bisa pilih produk lalu pesan langsung via WhatsApp.");}
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));b.classList.add("active");activeCategory=b.dataset.cat;render()}));document.getElementById("search").addEventListener("input",render);document.getElementById("size").addEventListener("change",updateOrderLink);document.getElementById("qty").addEventListener("input",updateOrderLink);render();
+</script>
+</body></html>
